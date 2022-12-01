@@ -18,13 +18,14 @@ For example, given 100, you can reach 1 in five steps with the following route: 
 
 def issquare(n):
     return n**0.5 == int(n**0.5)
-N = 8
+N = 10
 steps = 0
+print(f'{N} >> ', end='')
 while N > 1:
-    print(f'{N} >> ', end='')
-    if issquare(N):
-        N = int(N**0.5)
+    if N % 2 == 0:
+        N = N // 2
     else:
         N = N - 1
     steps += 1
-print('\n', steps)
+    print(f'{N} >> ', end='')
+print(f'\n{steps=}')
